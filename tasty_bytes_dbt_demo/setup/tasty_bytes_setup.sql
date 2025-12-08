@@ -7,21 +7,26 @@ CREATE OR REPLACE SCHEMA tasty_bytes_dbt_db.raw;
 CREATE OR REPLACE SCHEMA tasty_bytes_dbt_db.dev;
 CREATE OR REPLACE SCHEMA tasty_bytes_dbt_db.prod;
 
-CREATE OR REPLACE SECRET my_git_secret
+-- REPLACE BOSSN_GIT_SECRET in the following format: [Lastname][FirstInitial]_GIT_SECRET
+CREATE OR REPLACE SECRET BOSSN_GIT_SECRET
   TYPE = password
-  USERNAME = 'REPLACE with you GitHub username'
-  PASSWORD = 'REPLACE with your classic token';
-  
-CREATE OR REPLACE API INTEGRATION my_git_api
+  USERNAME = 'Set Your GitHub Username'
+  PASSWORD = 'Set Your Classic Token';
+
+-- REPLACE BOSSN_GIT_API in the following format: [Lastname][FirstInitial]_GIT_API
+CREATE OR REPLACE API INTEGRATION BOSSN_GIT_API
   API_PROVIDER = git_https_api
   API_ALLOWED_PREFIXES = ('https://github.com/')
-  ALLOWED_AUTHENTICATION_SECRETS = (my_git_secret)
+  -- REPLACE BOSSN_GIT_SECRET in the following format: [Lastname][FirstInitial]_GIT_SECRET
+  ALLOWED_AUTHENTICATION_SECRETS = (BOSSN_git_secret)
   ENABLED = TRUE;
 
 CREATE OR REPLACE GIT REPOSITORY snowflake_dbt_demo
-  ORIGIN = 'REPLACE with your GitHub repo link'
-  API_INTEGRATION = my_git_api
-  GIT_CREDENTIALS = my_git_secret;
+  ORIGIN = 'REPLACE with your GitHub Repo Link'
+  -- REPLACE BOSSN_GIT_API in the following format: [Lastname][FirstInitial]_GIT_API
+  -- REPLACE BOSSN_GIT_SECRET in the following format: [Lastname][FirstInitial]_GIT_SECRET
+  API_INTEGRATION = BOSSN_GIT_API
+  GIT_CREDENTIALS = BOSSN_GIT_SECRET;
 
 CREATE OR REPLACE FILE FORMAT tasty_bytes_dbt_db.public.csv_ff 
 type = 'csv';
