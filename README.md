@@ -21,7 +21,7 @@ This repository contains an example dbt project to get you started with dbt on S
       4. View compiled SQL
       5. Run compiled SQL
       6. Run `test`
-      7. Deploy dbt project
+      7. Deploy dbt project to Raw Schema
          Note1: When deploying, select `TB_101.RAW` as the schema — this is where Snowflake stores the dbt project object (metadata). The actual model outputs still go to `DEV` based on profiles.yml
          Note2: Use `dbt_project_lastn_fi` naming convention
       8. Understand how to orchestrate the project
