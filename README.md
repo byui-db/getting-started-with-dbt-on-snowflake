@@ -10,6 +10,12 @@ This repository contains an example dbt project to get you started with dbt on S
 
 ![GitHub Repo Setup](images/pat.png)
 
+### Before you start (FA26 Snowflake account)
+   - **Add your `_last_fi` to anything you create.** The `DEV` and `PROD` schemas are shared by the whole class, so name what you build with your last name + first initial, e.g. `dbt_project_clark_c` (the same `_last_fi` suffix you use in the labs). Overwriting each other's tables is fine for this demo, but your name is how we know which work is yours.
+   - When cloning the repo in Snowsight, choose database `PROJECT_DB` and schema `RAW` for the Git repository object, and use the `GIT_INTEGRATION` integration.
+   - Role is `STUDENT` and warehouse is `STUDENT_WH` (already set in `profiles.yml`). The source data is in `TB_101.RAW`; dbt builds into `TB_101.DEV` and `TB_101.PROD`.
+   - **Not available this term:** step 7 (deploying a dbt project object) and step 8 (orchestrating with Tasks) need privileges students don't have. Watch those parts of the video; you don't need to run them. Do the rest.
+
 ### When you get to the Git Repo Setup
    - Use this repo's url instead of the one in the video
    - Select `Public Repository` (no PAT needed for this demo)

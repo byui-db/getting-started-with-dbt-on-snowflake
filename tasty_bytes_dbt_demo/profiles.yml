@@ -5,15 +5,15 @@ tasty_bytes:
       type: snowflake
       account: 'not needed'
       user: 'not needed'
-      role: TRAINING_ROLE
+      role: STUDENT
       database: TB_101
       schema: dev
-      warehouse: ANIMAL_TASK_WH
+      warehouse: STUDENT_WH
     prod:
       type: snowflake
       account: 'not needed'
       user: 'not needed'
-      role: TRAINING_ROLE
+      role: STUDENT
       database: TB_101
       schema: prod
-      warehouse: ANIMAL_TASK_WH
+      warehouse: STUDENT_WH
