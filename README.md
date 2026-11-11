@@ -4,7 +4,15 @@
 
 This repository contains an example dbt project to get you started with dbt on Snowflake adapted for the ITM327 BYU-Idaho Course.
 
-## Following the dbt demo YouTube video
+## Walkthrough: running dbt in a Snowflake Workspace
+
+Start here for how to run `deps`, `compile`, `run` and `test` in the current Snowsight Workspaces layout:
+
+[![Watch the walkthrough on YouTube](https://img.youtube.com/vi/Va6J_XJiHdg/maxresdefault.jpg)](https://youtu.be/Va6J_XJiHdg)
+
+[Watch on YouTube](https://youtu.be/Va6J_XJiHdg)
+
+## Original dbt demo YouTube video
 
 [Running dbt Projects On Snowflake](https://www.youtube.com/watch?v=w7C7OkmYPFs)
 
